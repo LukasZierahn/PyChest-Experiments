@@ -1,11 +1,11 @@
 # PyChest Experiments
-This repository was used to produce the results presented in the paper "PyChEst: A software package for the retrospective estimation of distributional changes in  piece-wise stationary time series":
+This repository was used to produce the results presented in the paper "PyChEst: A software package for the retrospective estimation of distributional changes in  piece-wise stationary time series". The results used in the paper can be found in the error_log.csv and errors.csv.
 
 ## Docker
 The results can be replicated easily if [Docker](https://www.docker.com/) is installed by running
-> `docker build -t pychest_experiments . && docker run -itd --name pychest_experiments pychest_experiments `
+> `docker build -t pychest_experiments . && docker run -it --name pychest_experiments pychest_experiments `
 
-After the code returns, the docker container now contains the full results, which can be retrieved with: 
+Keep in mind that the experiments might take multiple hours or even days and might require up to 16 GB of memory. After the code returns, the docker container now contains the full results, which can be retrieved with: 
 
 > `docker cp pychest_experiments:/app/error_log.csv . && docker cp pychest_experiments:/app/errors.csv .`
 
