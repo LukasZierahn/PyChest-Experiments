@@ -23,8 +23,8 @@ if __name__ == "__main__":
 
     errorComputer = ErrorComputer()
 
-    #R_connection = prepare_R()
-    algorithms = [FindChangepoints(), ListEstimator()]
+    R_connection = prepare_R()
+    algorithms = [FindChangepoints(), WbsR(R_connection)]
 
     distributions = os.listdir("sequences")
     distributions.sort()
