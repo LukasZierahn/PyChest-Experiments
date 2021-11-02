@@ -71,14 +71,9 @@ class MarkovChain(Distribution):
         initial = np.ones(self.nodes) / self.nodes
         last = np.zeros(self.nodes)
 
-        i = 0
         while np.linalg.norm(initial - last) > 1e-8:
-            i += 1
-            print(i, last)
             last = initial
             initial = transition_probabilities.T @ self.get_kronecker(initial, self.order)
-            if i > 200:
-                0/0
         
         return initial
 

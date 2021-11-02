@@ -3,11 +3,12 @@ This repository was used to produce the results presented in the paper "PyChEst:
 
 ## Docker
 The results can be replicated easily if [Docker](https://www.docker.com/) is installed by running
-> `docker build -t pychest_experiments . && docker run -it --name pychest_experiments pychest_experiments `
+> `docker build -t pychest_experiments .`  
+> `docker run -it --name pychest_experiments pychest_experiments `
 
 Keep in mind that the experiments might take multiple hours or even days and might require up to 16 GB of memory. After the code returns, the docker container now contains the full results, which can be retrieved with: 
-
-> `docker cp pychest_experiments:/app/error_log.csv . && docker cp pychest_experiments:/app/errors.csv .`
+> `docker cp pychest_experiments:/app/error_log.csv .`  
+> `docker cp pychest_experiments:/app/errors.csv .`
 
 ## Manual
 However the experiments can also be run manually. First [Python 3](https://www.python.org/downloads/) needs to be installed, then one can install the depencies needed to execute the code by running:  

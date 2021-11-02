@@ -7,16 +7,15 @@ RUN pip3 install --upgrade pip
 ENV PYTHONPATH "${PYTHONPATH}:/app"
 WORKDIR /app
 
-ADD *.r .
-ADD *.py .
-ADD *.txt .
-COPY Distributions ./Distributions
-COPY Algorithms ./Algorithms
-
 RUN pip3 install Cython
 
-# installing python libraries
+ADD requirements.txt .
 RUN pip3 install -r requirements.txt
+
+ADD *.r .
+ADD *.py .
+COPY Distributions ./Distributions
+COPY Algorithms ./Algorithms
 
 RUN python3 prepare_tests.py 60000 60000 60000 200 1
 
