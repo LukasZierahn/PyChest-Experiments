@@ -23,18 +23,15 @@ if __name__ == "__main__":
     
     distributions = []
 
-    #distributions += [Hidden(Rotary([0.452341643253462432,0.6345354645623456234234, 0.452341643253462432 ]))]
-    distributions += [Rotary([0.452341643253462432,0.6345354645623456234234, 0.452341643253462432 ])]
-    distributions += [Bernoulli([0.8, 0.5, 0.8])]
-    #distributions += [Hidden(Bernoulli([0.8, 0.5, 0.8]))]
-    #distributions += [Dice([[2, 0.8], [2, 0], [2, 0.8]])]
-    #distributions += [Dice([[10, 0.8], [10, 0], [10, 0.8]])]
-    #distributions += [Dice([[5, 0.8], [5, 0], [5, 0.8]])]
+    # Bernoulli Figure 3
+    # distributions += [Bernoulli([0.8, 0.5])]
 
-    #distributions += [Bernoulli([0.5, 0.6, 0.5, 0.6],'Bern_Difficult')]
-    #distributions += [MarkovChain(2, 2, markov_arguments.MarkovChain_order_2_with_2_nodes)]
-    #distributions += [MarkovChain(2, 4, markov_arguments.MarkovChain_order_4_with_2_nodes)]
-    #distributions += [MarkovChain(2, 7, markov_arguments.MarkovChain_order_7_with_2_nodes)]
+    # Hidden Irrational Rotation Figure 3
+    # distributions += [Hidden(Rotary([0.452341643253462432, 0.6345354645623456234234]))]
+
+    # Irrational Rotation and Bernoulli Table 1
+    distributions += [Rotary([0.452341643253462432, 0.6345354645623456234234, 0.452341643253462432])]
+    distributions += [Bernoulli([0.8, 0.5, 0.8])]
     
     print("Steps: ", start_length, end_length, step_size, "min distance", min_distance_between_changepoints, "Distributions: ", [dist.name for dist in distributions])
 

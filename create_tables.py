@@ -44,7 +44,7 @@ if __name__ == "__main__":
                 errors = error_log[(error_log.Length == length) & (error_log.Algorithm == alg) & (error_log.Distribution == dist)]
                 error_list = []
                 for _, error_iteration in errors.iterrows():
-                    if isinstance(error_iteration.Estimates, float):
+                    if isinstance(error_iteration.Estimates, float) and np.isnan(error_iteration.Estimates):
                         continue
 
                     error_array = [error_iteration.Estimates]
